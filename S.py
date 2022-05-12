@@ -38,7 +38,7 @@ cap = cv2.VideoCapture(cv2.CAP_DSHOW+0)
 startTime = time.time()
 prev_index = 0
 sentence = ''
-recognizeDelay = 1
+recognizeDelay = 2
 
 while cap.isOpened():
     ret, img = cap.read()
