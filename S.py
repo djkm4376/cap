@@ -81,7 +81,7 @@ while cap.isOpened():
                     num = round(num, 6)
                     f.write(str(num))
                     f.write(',')
-                f.write("0.00000") # 매칭 시키기위한 데이터 
+                f.write("27.00000") # 매칭 시키기위한 데이터 
                 f.write('\n')
                 print(angle)
                 print("next")
