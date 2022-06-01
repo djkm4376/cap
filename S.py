@@ -25,13 +25,14 @@ hands = mp_hands.Hands(
 f = open('C:\cap_python\stest.txt', 'w')
 
 # Gesture recognition model
-file = np.genfromtxt('C:\cap_python\dataSet.txt', delimiter=',')
+file = np.genfromtxt('C:\cap_python\dataSet.csv', delimiter=',')
 angle = file[:,:-1].astype(np.float32)
 label = file[:, -1].astype(np.float32)
 knn = cv2.ml.KNearest_create()
 knn.train(angle, cv2.ml.ROW_SAMPLE, label)
 
 cap = cv2.VideoCapture(cv2.CAP_DSHOW+0)
+# cap = cv2.VideoCapture(1)
 # 라즈베리파이에선 기존 카메라 = 0, 웹 카메라 = 1로 설정 가능 
 # 윈도우상에서는 노트북이라 v2.VideoCapture(0)이 사용이 안되어서 35번 줄과 같이 사용함
 
@@ -81,7 +82,7 @@ while cap.isOpened():
                     num = round(num, 6)
                     f.write(str(num))
                     f.write(',')
-                f.write("27.00000") # 매칭 시키기위한 데이터 
+                f.write("14.00000") # 매칭 시키기위한 데이터 
                 f.write('\n')
                 print(angle)
                 print("next")
